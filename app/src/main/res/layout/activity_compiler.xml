@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Compiler">
+
+    <android.support.design.widget.TextInputLayout
+        android:textColorHint="@color/nliveo_blue_colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/compilerInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/nliveo_blue_colorPrimaryDark"
+            android:hint="Insert input followed by spaces"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+
+
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/compilerCode"
+            android:layout_height="wrap_content"
+            android:hint="Insert your code here"
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:outlineSpotShadowColor="@color/nliveo_black"
+        android:layout_alignParentBottom="true"
+        android:onClick="runCode"
+        android:src="@drawable/ic_menu_send" />
+
+</RelativeLayout>

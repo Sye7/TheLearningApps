@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "882166217571",
+    "firebase_url": "https://the-learning-app-a5ea7.firebaseio.com",
+    "project_id": "the-learning-app-a5ea7",
+    "storage_bucket": "the-learning-app-a5ea7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882166217571:android:0531fac1f0f8ad89",
+        "android_client_info": {
+          "package_name": "developers.hub.com.thelearningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882166217571-5l4soop7mgqnfabqb2mt2hmc90t3ar1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPT-lN2xFNbnuXDv0UPreVsjpxJLkUuVE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

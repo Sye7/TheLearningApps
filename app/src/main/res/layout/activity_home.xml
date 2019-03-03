@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <WebView
+        android:id="@+id/quiz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/congratsPic"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="55dp"
+        android:gravity="bottom">
+
+
+        <ImageView
+            android:id="@+id/machineL"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/setting"
+            android:layout_marginBottom="2dp"
+            android:onClick="screenShot"
+            android:text="MachineL" />
+
+
+        <ImageView
+            android:id="@+id/processResult"
+            android:layout_width="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_height="45dp"
+            android:src="@drawable/result"
+           android:layout_marginBottom="0dp"
+            android:onClick="processResult"
+            android:text="Result" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tabbed"
+            android:onClick="tabbed"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp">
+
+        <android.support.design.widget.BottomNavigationView
+
+            android:id="@+id/bottomHome_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#37474F"
+            app:itemIconTint="@color/nliveo_white"
+            app:itemTextColor="@color/nliveo_white"
+            app:menu="@menu/navigation" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

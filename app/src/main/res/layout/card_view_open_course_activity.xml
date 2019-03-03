@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_viewYoutube"
+    card_view:cardBackgroundColor="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_marginEnd="12dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_card"
+            android:layout_width="376dp"
+            android:layout_height="126dp"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/title_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:textColor="#212121"
+            android:textSize="22sp"
+            tools:text="C++ By Saurabh Shukla" />
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textColor="#424242"
+            android:text="@string/content"
+
+
+            />
+        <LinearLayout
+            android:id="@+id/youtubeToggle"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="22dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/play"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="@string/explore"
+                android:textColor="#AA00FF"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
+
+
