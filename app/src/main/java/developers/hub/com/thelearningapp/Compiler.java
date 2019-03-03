@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 import developers.hub.com.thelearningapp.Helper.HttpConnectionHelper;
 
@@ -49,9 +50,8 @@ public class Compiler extends AppCompatActivity {
 
         code.setText(s);
 
-        Mcoder mCoder = new Mcoder();
+        new Mcoder().execute("asdfgh");
 
-        String str = String.valueOf(mCoder.execute("dfgh"));
 
     }
 
@@ -61,6 +61,9 @@ public class Compiler extends AppCompatActivity {
 }
 
 class Mcoder extends android.os.AsyncTask<String,String,String> {
+
+
+
     @Override
     protected String doInBackground(String... strings) {
 
