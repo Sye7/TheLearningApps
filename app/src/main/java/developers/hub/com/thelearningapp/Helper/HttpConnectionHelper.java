@@ -16,7 +16,7 @@ public class HttpConnectionHelper {
 
     public static String get(String url) throws IOException {
 
-        StringBuffer response = new StringBuffer();;
+        StringBuffer response = new StringBuffer();
 
         URL obj = new URL(url);
 
@@ -51,18 +51,23 @@ public class HttpConnectionHelper {
 
     }
 
-    private static final String POST_PARAMS = "userName=Pankaj";
 
-    public static String send(String url) throws IOException {
+    public static String send(final String url, final String post) throws IOException {
 
         StringBuffer response = new StringBuffer();
+          final String POST_PARAMS  = post;
+
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("POST");
 
+
         // For POST only - START
-        con.setDoOutput(true);
+        con.setRequestProperty("Content-Type", "application/json");
+
+        con.setDoOutput(true); // to post
+        con.setDoInput(true);
         OutputStream os = con.getOutputStream();
         os.write(POST_PARAMS.getBytes());
         os.flush();
@@ -70,9 +75,11 @@ public class HttpConnectionHelper {
         // For POST only - END
 
         int responseCode = con.getResponseCode();
-        System.out.println("POST Response Code :: " + responseCode);
+        System.out.println(" yasir POST Response Code :: " + responseCode);
 
-        if (responseCode == HttpURLConnection.HTTP_OK) { //success
+
+  //      if (responseCode == HttpURLConnection.HTTP_OK) { //success
+
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
             String inputLine;
@@ -83,14 +90,14 @@ public class HttpConnectionHelper {
             in.close();
 
             // print result
-            System.out.println(response.toString());
+            System.out.println("yasir" + response.toString());
             return response.toString();
 
-        } else {
-            System.out.println("POST request not worked");
-        }
+      //  } else {
+        //    System.out.println("POST request not worked");
+       // }
 
-        return response.toString();
+      //  return response.toString();
 
     }
 
