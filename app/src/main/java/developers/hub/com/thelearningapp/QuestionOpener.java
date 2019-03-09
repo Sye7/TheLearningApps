@@ -26,10 +26,12 @@ public class QuestionOpener extends AppCompatActivity {
 
 
     int index = 0;
+    CodingQuestionDataModel dm;
 
     public void compiler(View view){
 
         Intent intent = new Intent(getApplicationContext(), Compiler.class);
+        intent.putExtra("output", dm.getSampleOutput());
         startActivity(intent);
 
 
@@ -54,7 +56,7 @@ public class QuestionOpener extends AppCompatActivity {
 
         ArrayList al = CodingQuestions.questions;
 
-        CodingQuestionDataModel dm = CodingQuestions.questions.get(index);
+         dm = CodingQuestions.questions.get(index);
 
         t1.setText(dm.getqName());
         t2.setText(dm.getqDesc());

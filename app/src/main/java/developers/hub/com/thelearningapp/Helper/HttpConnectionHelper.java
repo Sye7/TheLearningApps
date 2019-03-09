@@ -90,7 +90,6 @@ public class HttpConnectionHelper {
             in.close();
 
             // print result
-            System.out.println("yasir" + response.toString());
             return response.toString();
 
       //  } else {
