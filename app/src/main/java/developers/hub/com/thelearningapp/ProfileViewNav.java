@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -172,9 +173,7 @@ public class ProfileViewNav extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    Intent intent = new Intent(getApplicationContext(),profile.class);
-                    intent.putExtra("message","yes");
-                    startActivity(intent);
+                    Toast.makeText(ProfileViewNav.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 contactInfo =   profileInfo[0].getContactInfo();
@@ -313,7 +312,6 @@ public class ProfileViewNav extends AppCompatActivity {
         tDp = (ImageView) findViewById(R.id.profileNavigation);
         tContactInfo = (TextView) findViewById(R.id.contactNavigation);
 
-
         initialiseCurrentAccount();
 
 
@@ -332,11 +330,7 @@ public class ProfileViewNav extends AppCompatActivity {
 
     }
 
-    public void editProfile(View view ){
 
-        Intent intent = new Intent(getApplicationContext(),profile.class);
-        startActivity(intent);
-    }
 
 
 

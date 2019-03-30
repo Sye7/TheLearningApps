@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Editor">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:umanoOverlay="true"
+        app:umanoPanelHeight="36dp"
+        app:umanoShadowHeight="4dp"
+        app:umanoDragView="@id/dragView"
+        >
+
+        <LinearLayout
+            android:id="@+id/editor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:popupBackground="#fff"
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="2"
+                    android:entries="@array/languages">
+
+                </Spinner>
+
+                <Switch
+                    android:id="@+id/custominput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:textColor="#fff"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/input"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="Clear"
+                    android:src="@drawable/clear2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/gradient2">
+
+                <developers.hub.com.thelearningapp.MyEditText
+                    android:textColor="#fff"
+                    android:id="@+id/edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp">
+
+                </developers.hub.com.thelearningapp.MyEditText>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleview"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="#424242">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:background="#000"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/output"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <ScrollView
+                android:id="@+id/dragView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:background="@drawable/gradient"
+                    android:padding="4dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/compile_output"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:textColor="#fff"
+                        android:id="@+id/time"
+                        android:textSize="18sp"
+                        android:text="Time - "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+    <view
+        android:id="@+id/fab"
+        class="mbanje.kurt.fabbutton.FabButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="10dp"
+        android:color="@color/colorAccent"
+        android:indeterminate="true"
+        android:src="@drawable/compiler"
+        app:fbb_endBitmap="@drawable/ic_fab_complete"
+        app:fbb_progressColor="@color/colorPrimaryDark"
+        app:fbb_progressWidthRatio="0.1"
+        app:fbb_showEndBitmap="true"
+        app:fbb_showShadow="true" />
+
+</RelativeLayout>

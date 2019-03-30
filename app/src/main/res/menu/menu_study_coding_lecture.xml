@@ -4,7 +4,7 @@
     tools:context="developers.hub.com.thelearningapp.study_coding_lecture">
     <item
         android:id="@+id/mainAbout"
-        android:title="About" />
+        android:title="Authenticate" />
     <item
         android:id="@+id/mainLogOut"
         android:title="Logout" />

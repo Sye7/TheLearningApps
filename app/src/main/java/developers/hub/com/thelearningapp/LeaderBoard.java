@@ -175,23 +175,13 @@ public class LeaderBoard extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        detachDbReadListener();
-    }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        attachDbReadListener();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader_board);
+
 
         mVisible = true;
         mMessageDatabaseReference = FirebaseDatabase.getInstance().getReference().child("profile");
@@ -203,9 +193,6 @@ public class LeaderBoard extends AppCompatActivity {
 
 
         attachDbReadListener();
-
-
-
 
         // RecycleView
 
@@ -237,6 +224,8 @@ public class LeaderBoard extends AppCompatActivity {
 
     private void initialiseCurrentAccount() {
 
+
+
         final ProfileInfo[] profileInfo = new ProfileInfo[1];
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -262,9 +251,7 @@ public class LeaderBoard extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    Intent intent = new Intent(getApplicationContext(),profile.class);
-                    intent.putExtra("message","yes");
-                    startActivity(intent);
+                    Toast.makeText(myActivity, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 System.out.println("yasir "+name + rank + point);

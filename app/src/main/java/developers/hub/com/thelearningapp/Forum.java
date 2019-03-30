@@ -88,11 +88,9 @@ public class Forum extends AppCompatActivity {
     }
 
 
+    public void cang() {
 
-
-    public void cang(){
-
-        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(intent);
 
     }
@@ -107,7 +105,7 @@ public class Forum extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_explore:
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_search:
@@ -116,7 +114,7 @@ public class Forum extends AppCompatActivity {
                 case R.id.navigation_bookmark:
                     return true;
                 case R.id.navigation_profile:
-                    Intent intent2 = new Intent(getApplicationContext(),ProfileViewNav.class);
+                    Intent intent2 = new Intent(getApplicationContext(), ProfileViewNav.class);
                     startActivity(intent2);
                     return true;
 
@@ -169,11 +167,9 @@ public class Forum extends AppCompatActivity {
                             nameSend = profileInfo[0].getName();
                             dpSend = profileInfo[0].getDp();
 
-                        }catch (Exception e){
+                        } catch (Exception e) {
 
-                            Intent intent = new Intent(getApplicationContext(),profile.class);
-                            intent.putExtra("message","yes");
-                            startActivity(intent);
+                          Snackbar.make(view,e.getMessage(),Snackbar.LENGTH_SHORT).show();
                         }
 
                         //
@@ -194,12 +190,10 @@ public class Forum extends AppCompatActivity {
                             deleteDialog.dismiss();
 
 
-
                         } else {
 
 
-
-                            if(nameSend.length() >= 3) {
+                            if (nameSend.length() >= 3) {
                                 java.util.Date date = new java.util.Date();
                                 ForumDataModel model = new ForumDataModel(nameSend, title, post, date.toString(), 0 + "", dpSend);
 
@@ -215,8 +209,6 @@ public class Forum extends AppCompatActivity {
                             deleteDialog.dismiss();
 
                         }
-
-
 
 
                     }
@@ -279,7 +271,6 @@ public class Forum extends AppCompatActivity {
                         Toast.makeText(Forum.this, "Executed", Toast.LENGTH_SHORT).show();
 
 
-
                     }
 
 
@@ -313,7 +304,7 @@ public class Forum extends AppCompatActivity {
     }
 
 
-    static int db =0;
+    static int db = 0;
 
     private void attachDbReadListener() {
 
@@ -330,7 +321,7 @@ public class Forum extends AppCompatActivity {
                     like = forumDataModel.getLike();
                     dp = forumDataModel.getDp();
 
-                    ourFourm.add(new ForumDataModel(name, title, post, time, like, dp,++db));
+                    ourFourm.add(new ForumDataModel(name, title, post, time, like, dp, ++db));
 
                     customAdapterForum.notifyDataSetChanged();
 
@@ -360,18 +351,13 @@ public class Forum extends AppCompatActivity {
     }
 
 
-
-
-
-
-    boolean  backPressToExit = false;
+    boolean backPressToExit = false;
 
     @Override
     public void onBackPressed() {
 
 
-        if(backPressToExit)
-        {
+        if (backPressToExit) {
 
             Intent a = new Intent(Intent.ACTION_MAIN);
             a.addCategory(Intent.CATEGORY_HOME);
@@ -391,18 +377,15 @@ public class Forum extends AppCompatActivity {
         }, 2000);
 
 
-
     }
 
 
-
-
-    public void likeForum(View view){
+    public void likeForum(View view) {
 
         ImageView imageView = (ImageView) findViewById(R.id.forumLike);
-        TextView tv = (TextView)findViewById(R.id.totalLike);
+        TextView tv = (TextView) findViewById(R.id.totalLike);
         int lik = Integer.parseInt(tv.getText().toString()) + 1;
-         tv.setText(lik+" ");
+        tv.setText(lik + " ");
 
         imageView.setImageResource(R.drawable.forum_liked);
 
@@ -423,8 +406,6 @@ public class Forum extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         navigation.setSelectedItemId(R.id.navigation_bookmark);
-
-
 
 
         send = (ImageButton) findViewById(R.id.sendForum);
@@ -462,7 +443,6 @@ public class Forum extends AppCompatActivity {
         recList.setLayoutManager(llm);
 
         attachDbReadListener();
-
 
 
     }

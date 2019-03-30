@@ -197,10 +197,8 @@ public class Discussion extends AppCompatActivity {
 
                 }catch (Exception e){
 
-                    Intent intent = new Intent(getApplicationContext(),profile.class);
-                    intent.putExtra("message","yes");
-                    startActivity(intent);
-                }
+                    Toast.makeText(Discussion.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                  }
 
 
 

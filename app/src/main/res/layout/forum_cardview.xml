@@ -12,6 +12,7 @@
     card_view:cardCornerRadius="13dp">
 
     <android.support.v7.widget.LinearLayoutCompat
+        android:layout_marginStart="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -48,18 +49,18 @@
 
     </android.support.v7.widget.LinearLayoutCompat>
 
-
     <TextView
         android:id="@+id/timeForum"
-        android:layout_width="89dp"
-        android:layout_height="30dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:paddingLeft="20dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="40dp"
         android:text="Time"
         android:textSize="12dp" />
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -74,20 +75,22 @@
             android:textColor="@color/design_default_color_primary_dark"
             android:textSize="22dp"/>
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:id="@+id/titleAlterForum"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="15dp"
             android:id="@+id/forumText"
             android:textSize="16dp"/>
 
 
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -96,7 +99,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:layout_marginTop="40dp"
                 android:id="@+id/totalLike"
                 android:text="like"
                 />
@@ -104,8 +106,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:onClick="likeForum"
                 android:id="@+id/forumLike"
                 android:src="@drawable/forum_lik" />
@@ -113,7 +114,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:id="@+id/forumReply"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/reply" />

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#263238"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_file"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+
+        />
+
+
+    <LinearLayout
+        android:layout_margin="4dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/file_name"
+            android:gravity="top"
+            android:backgroundTint="#212121"
+            android:textColor="#fff"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:gravity="center_vertical"
+            android:text=".java"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

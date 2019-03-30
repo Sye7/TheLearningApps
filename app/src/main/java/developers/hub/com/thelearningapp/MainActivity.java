@@ -42,9 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private FlipperLayout flipperLayout;
     private Button courseAct;
     private CardView b1;
-    int i =0;
-
-
+    int i = 0;
 
 
     // Bottom Navigation
@@ -61,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                     bang();
                     return true;
                 case R.id.navigation_bookmark:
-                    Intent intent1 = new Intent(getApplicationContext(),Forum.class);
+                    Intent intent1 = new Intent(getApplicationContext(), Forum.class);
                     startActivity(intent1);
                     return true;
                 case R.id.navigation_profile:
-                    Intent intent2 = new Intent(getApplicationContext(),ProfileViewNav.class);
+                    Intent intent2 = new Intent(getApplicationContext(), ProfileViewNav.class);
                     startActivity(intent2);
                     return true;
 
@@ -74,14 +72,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    boolean  backPressToExit = false;
+    boolean backPressToExit = false;
 
     @Override
     public void onBackPressed() {
 
 
-        if(backPressToExit)
-        {
+        if (backPressToExit) {
 
             Intent a = new Intent(Intent.ACTION_MAIN);
             a.addCategory(Intent.CATEGORY_HOME);
@@ -101,85 +98,95 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
 
 
-
     }
 
 
     // Course Activity
 
     // begComp
-    public void compBeg(View view){
+    public void compBeg(View view) {
 
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",1);
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 1);
+        startActivity(intent);
+
+
+    }
+
+    public void intermediateComp(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 2);
+        startActivity(intent);
+
+
+
+    }
+
+    public void compAdv(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 3);
+        startActivity(intent);
+
+
+
+    }
+
+    public void andBeg(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 4);
+        startActivity(intent);
+
+
+    }
+
+    public void andInt(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 5);
         startActivity(intent);
 
     }
 
-    public void intermediateComp(View view){
+    public void andAdv(View view) {
 
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",2);
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 6);
         startActivity(intent);
 
     }
 
-    public void compAdv(View view){
+    public void webBeg(View view) {
 
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",3);
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 7);
         startActivity(intent);
+
 
     }
 
-    public void andBeg(View view){
+    public void webInt(View view) {
 
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",4);
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 8);
         startActivity(intent);
+
 
     }
 
-    public void andInt(View view){
+    public void webAdv(View view) {
 
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",5);
+        Intent intent = new Intent(getApplicationContext(), Open_Course_Activity.class);
+        intent.putExtra("list", 9);
         startActivity(intent);
 
     }
-    public void andAdv(View view){
-
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",6);
-        startActivity(intent);
-
-    }
-    public void webBeg(View view){
-
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",7);
-        startActivity(intent);
-
-    }
-    public void webInt(View view){
-
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",8);
-        startActivity(intent);
-
-    }
-
-    public void webAdv(View view){
-
-        Intent intent = new Intent(getApplicationContext(),Open_Course_Activity.class);
-        intent.putExtra("list",9);
-        startActivity(intent);
-
-    }
-
 
 
     BottomNavigationView navigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -187,11 +194,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Bottom Navigation
 
-         navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_explore
         );
-
 
 
         // Messy
@@ -199,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
         // Initialize
         flipperLayout = (FlipperLayout) findViewById(R.id.flipperImage);
         b1 = (CardView) findViewById(R.id.Competitve);
-
 
 
         // Flipper Image
@@ -210,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         authFirebase = FirebaseAuth.getInstance();
-        if (authFirebase.getCurrentUser() != null) {
+   /*     if (authFirebase.getCurrentUser() != null) {
             // already signed in
 
         } else {
@@ -229,15 +234,16 @@ public class MainActivity extends AppCompatActivity {
                     RC_SIGN_IN);
 
         }
+        */
 
     }
 
     // Flipper
 
 
-    String[] courses = {"https://sye7272.000webhostapp.com","https://www.udemy.com/java-the-complete-java-developer-course/","https://www.udemy.com/complete-android-n-developer-course/",
+    String[] courses = {"https://sye7272.000webhostapp.com", "https://www.udemy.com/java-the-complete-java-developer-course/", "https://www.udemy.com/complete-android-n-developer-course/",
 
-                        "https://www.udemy.com/java-enterprise-application-development-with-java-ee-8/","https://www.udemy.com/complete-python-3-masterclass-journey/"
+            "https://www.udemy.com/java-enterprise-application-development-with-java-ee-8/", "https://www.udemy.com/complete-python-3-masterclass-journey/"
     };
 
     private void setLayout() throws MalformedURLException {
@@ -262,32 +268,31 @@ public class MainActivity extends AppCompatActivity {
                 public void onFlipperClick(FlipperView flipperView) {
 
 
-                    if(flipperView.getImageRes() ==   R.mipmap.flipper_guide){
+                    if (flipperView.getImageRes() == R.mipmap.flipper_guide) {
 
                         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-                           intent.putExtra(SearchManager.QUERY, courses[0]);
-                          startActivity(intent);
+                        intent.putExtra(SearchManager.QUERY, courses[0]);
+                        startActivity(intent);
 
-                    }
-                   else if(flipperView.getImageRes() ==   R.mipmap.flipper_java){
+                    } else if (flipperView.getImageRes() == R.mipmap.flipper_java) {
 
                         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                         intent.putExtra(SearchManager.QUERY, courses[1]);
                         startActivity(intent);
 
-                    }  else if(flipperView.getImageRes() ==   R.mipmap.flipper_android){
+                    } else if (flipperView.getImageRes() == R.mipmap.flipper_android) {
 
                         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                         intent.putExtra(SearchManager.QUERY, courses[2]);
                         startActivity(intent);
 
-                    } else if(flipperView.getImageRes() ==   R.mipmap.flipper_web){
+                    } else if (flipperView.getImageRes() == R.mipmap.flipper_web) {
 
                         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                         intent.putExtra(SearchManager.QUERY, courses[3]);
                         startActivity(intent);
 
-                    }  else if(flipperView.getImageRes() ==   R.mipmap.flipper_python){
+                    } else if (flipperView.getImageRes() == R.mipmap.flipper_python) {
 
                         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                         intent.putExtra(SearchManager.QUERY, courses[4]);
@@ -295,18 +300,14 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
-
-
                 }
             });
         }
 
 
-
     }
 
-    public void logout()
-    {
+    public void logout() {
         authFirebase.signOut();
 
         startActivityForResult(
@@ -323,9 +324,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void bang(){
+    public void bang() {
 
-        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(intent);
 
     }
@@ -333,9 +334,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        if(requestCode == RC_SIGN_IN){
+        if (requestCode == RC_SIGN_IN) {
 
-            if(resultCode == RESULT_OK)
+            if (resultCode == RESULT_OK)
                 Toast.makeText(this, "Sign in", Toast.LENGTH_SHORT).show();
             else {
                 Toast.makeText(this, "Sign in Cancel", Toast.LENGTH_SHORT).show();

@@ -91,6 +91,16 @@ public class CustomAdapterForum extends RecyclerView.Adapter<CustomAdapterForum.
             contactViewHolder.vTitle.setText("");
 
         Glide.with(myActivity).load(dpUrl).into(contactViewHolder.vDp);
+
+        if(picUrlTitle == null){
+
+            contactViewHolder.vPostImage.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            contactViewHolder.vPostImage.setVisibility(View.VISIBLE);
+
+        }
         Glide.with(myActivity).load(picUrlTitle).into(contactViewHolder.vPostImage);
 
 
@@ -145,13 +155,6 @@ public class CustomAdapterForum extends RecyclerView.Adapter<CustomAdapterForum.
 
                 ImageView imageView = contactViewHolder.vLikeButton;
                 imageView.setImageResource(R.drawable.forum_liked);
-
-
-
-
-
-
-                Toast.makeText(myActivity, "Done"+textView.getText().toString(), Toast.LENGTH_SHORT).show();
 
             }
         });

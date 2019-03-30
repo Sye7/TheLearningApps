@@ -30,7 +30,7 @@ public class QuestionOpener extends AppCompatActivity {
 
     public void compiler(View view){
 
-        Intent intent = new Intent(getApplicationContext(), Compiler.class);
+        Intent intent = new Intent(getApplicationContext(), Editor.class);
         intent.putExtra("output", dm.getSampleOutput());
         startActivity(intent);
 

@@ -56,6 +56,13 @@ dependencies {
     // navigation
     implementation 'br.com.liveo:navigationdrawer-material:2.5.1'
 
+    implementation 'mbanje.kurt:fabbutton:1.2.4@aar'
+    implementation('com.sothree.slidinguppanel:library:3.4.0') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
     // firebase
     implementation 'com.google.firebase:firebase-core:16.0.7'
 

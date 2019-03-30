@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Compiler"></activity>
+        <activity android:name=".Editor"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".Compiler" />
         <activity android:name=".QuestionOpener" />
         <activity android:name=".CodingQuestions" />
         <activity android:name=".PageSliderIntro" />

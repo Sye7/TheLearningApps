@@ -6,7 +6,6 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
     <string name="content">This course is basically for beginners , who are new in programming world, By this course you can start your journey towards a Better Professional programmer. </string>
 
     <string name="explore">Explore</string>
@@ -31,4 +30,37 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_study_coding_lecture">study_coding_lecture</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="input">Input</string>
+    <string name="custom_input">Custom Input</string>
+    <string name="note">Use new line to separate multiple inputs.</string>
+    <string name="output">Output</string>
+
+    <string name="java">import java.util.*;\n\n/*Please dont change class name, Mat and class must not be public*/\n\nclass Mat\n
+{\n\tpublic static void main(String args[])\n\t{\n\tSystem.out.println("Hello, World");\n\t}\n}</string>
+    <string name="save_code">Save</string>
+    <string name="save_file">Save File</string>
+
+    <array name="languages">
+        <item>Bash</item>
+        <item>Basic</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Clojure</item>
+        <item>Crystal</item>
+        <item>Elixir</item>
+        <item>Erlang</item>
+        <item>Go</item>
+        <item>Haskell</item>
+        <item>Insect</item>
+        <item>Java</item>
+        <item>Javascript</item>
+        <item>OCaml</item>
+        <item>Octave</item>
+        <item>Pascal</item>
+        <item>Python</item>
+        <item>Ruby</item>
+        <item>Rust</item>
+    </array>
 </resources>

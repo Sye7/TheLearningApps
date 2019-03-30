@@ -241,21 +241,6 @@
 
     </RelativeLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="80dp"
-
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="editProfile"
-            android:outlineSpotShadowColor="@color/nliveo_black"
-            android:src="@drawable/floating_btn"
-            app:rippleColor="@color/nliveo_black" />
-
-
     </FrameLayout>
 
 

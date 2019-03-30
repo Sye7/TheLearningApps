@@ -143,6 +143,10 @@ public class profile extends AppCompatActivity {
                             mMessageDatabaseReferenceUser.push().setValue(profileInfo);
                           Snackbar.make(view,"Done :)",Snackbar.LENGTH_SHORT).show();
 
+                          Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                          startActivity(intent);
+                          finish();
+
                         }
 
 
@@ -157,7 +161,7 @@ public class profile extends AppCompatActivity {
         }
 
         else{
-            Snackbar.make(view, "Sorry Already Registered", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(view, "Tap again", Snackbar.LENGTH_SHORT).show();
 
         }
 
@@ -208,6 +212,21 @@ public class profile extends AppCompatActivity {
             return true;
         }
 
+        if(id == R.id.mainAbout){
+
+            startActivityForResult(
+                    AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setTheme(R.style.FirebaseLoginTheme)
+                            .setAvailableProviders(Arrays.asList(
+                                    new AuthUI.IdpConfig.GoogleBuilder().build(),
+                                    new AuthUI.IdpConfig.PhoneBuilder().build(),
+                                    new AuthUI.IdpConfig.AnonymousBuilder().build()))
+                            .build(),
+                    RC_SIGN_IN);
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -216,18 +235,6 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-
-        Intent intent = getIntent();
-        String recomnd = "";
-        recomnd  = intent.getStringExtra("message");
-
-        if(recomnd == null)
-            recomnd = "yas";
-
-        if(recomnd.equals("yes")){
-            Toast.makeText(this, "Register First", Toast.LENGTH_SHORT).show();
-        }
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarProfile);

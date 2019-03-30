@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
+
 import developers.hub.com.thelearningapp.Helper.SliderAdapter;
 
 public class PageSliderIntro extends AppCompatActivity {
@@ -26,6 +31,8 @@ public class PageSliderIntro extends AppCompatActivity {
     private Button mBackBtn;
 
     private int mCurrentPage;
+
+    final int RC_SIGN_IN =1;
 
 
     @Override
@@ -66,13 +73,36 @@ public class PageSliderIntro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(mNextBtn.getText().toString() == "Finish")
+
+
+                    if(mNextBtn.getText().toString() == "Finish")
                 {
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
+
+                    FirebaseAuth authFirebase = FirebaseAuth.getInstance();
+
+                    if (authFirebase.getCurrentUser() != null) {
+                        // already signed in
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        // not signed in
+                      activityProfile();
+
+                    }
+
                 }
             }
         });
+    }
+
+    public void activityProfile(){
+
+        Intent intent = new Intent(getApplicationContext(),profile.class);
+        startActivity(intent);
+        finish();
+
     }
 
     public void addDotsIndicator(int position) {
