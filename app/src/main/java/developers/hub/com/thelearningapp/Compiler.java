@@ -116,7 +116,8 @@ public class Compiler extends AppCompatActivity
         outputLayout.setVisibility(View.INVISIBLE);
 
 
-        // creating array adapter
+       
+       // creating array adapter
 
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,language);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -196,7 +197,8 @@ class Mcoder extends android.os.AsyncTask<String,String,String> {
 
 
         try {
-            //     String op = HttpConnectionHelper.get("sdfghj");
+           
+           //     String op = HttpConnectionHelper.get("sdfghj");
 
             String s = "hello";
 
@@ -230,6 +232,7 @@ class Mcoder extends android.os.AsyncTask<String,String,String> {
 
             jsonObject.put("max_file_size", "1024");
 
+            
             //   System.out.println("yasir "+ jsonObject.toString());
 
 
